@@ -3,7 +3,6 @@ from django.shortcuts import render
 from .models import Tweet
 
 def home_view(request, *args, **kwargs):
-    print(args, kwargs)
     return render(request, "pages/home.html", context={}, status=200)
 
 def tweet_list_view(request, *args, **kwargs):
