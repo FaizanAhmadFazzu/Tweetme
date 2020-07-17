@@ -41,22 +41,27 @@ function handleTweetCreateFormDidSubmit(event){
     const url = myForm.getAttribute("action")
     const method = myForm.getAttribute("method")
     const xhr = new XMLHttpRequest()
+    const responseType = "json"
+    xhr.responseType = responseType
     xhr.open(method, url)
     xhr.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest")
     xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest")
     xhr.onload = function() {
-        const serverResponse = xhr.response
-        console.log(xhr.status, serverResponse)
-        const tweetsE1 = document.getElementById("tweets")
-        loadTweets(tweetsEl)
-    }
+        if (xhr.status === 201){
+            const newTweetJson = xhr.response
+            console.log(newTweetJson.likes)
+            const newTweetElement = formatTweetElement(newTweetJson)
+            console.log(newTweetElement)
+            tweetsContainerElement.prepend(newTweetElement)
+        }
+    }pi
     xhr.send(myFormData)
 }
 
 const tweetCreateFormE1 = document.getElementById("tweet-create-form")
 tweetCreateFormE1.addEventListener("submit", handleTweetCreateFormDidSubmit)
 
-const tweetsEl = document.getElementById("tweets")
+const tweetsContainerElement = document.getElementById("tweets")
 function loadTweets(tweetsElement){
     const xhr = new XMLHttpRequest()
     const method = 'GET' // "POST"
@@ -94,6 +99,6 @@ function formatTweetElement(tweet) {
     return formattedTweet
 }
 
-loadTweets(tweetsEl)
+loadTweets(tweetsContainerElement)
 </script>
 {% endblock content %}
