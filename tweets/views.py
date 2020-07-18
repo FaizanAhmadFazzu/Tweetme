@@ -14,7 +14,6 @@ def home_view(request, *args, **kwargs):
 
 
 def tweet_create_view(request, *args, **kwargs):
-    print(abc)
     form = TweetForm(request.POST or None)
     print('post data is ', request.POST)
     next_url = request.POST.get("next") or None
