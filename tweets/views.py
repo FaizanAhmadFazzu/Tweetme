@@ -14,6 +14,9 @@ def home_view(request, *args, **kwargs):
 
 
 def tweet_create_view(request, *args, **kwargs):
+    '''
+    REST API Create View -> DRF
+    '''
     user = request.user
     if not request.user.is_authenticated:
         user = None
