@@ -14,9 +14,10 @@ SECRET_KEY = '+s^6z#uh#k&z^jkzialwm%xrgq@-)t@b0-lo5z%)iju+d1cc*b'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1',]
-
 LOGIN_URL = "/login"
+
 MAX_TWEET_LENGTH = 240
+TWEET_ACTION_OPTIONS = ["like", "unlike", "retweet"]
 # Application definition
 
 INSTALLED_APPS = [
