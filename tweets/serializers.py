@@ -6,7 +6,6 @@ MAX_TWEET_LENGTH = settings.MAX_TWEET_LENGTH
 TWEET_ACTION_OPTIONS = settings.TWEET_ACTION_OPTIONS
 
 
-
 class TweetActionSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     action = serializers.CharField()
@@ -44,6 +43,9 @@ class TweetSerializer(serializers.ModelSerializer):
     def get_likes(self, obj):
         return obj.likes.count()
 
+    def get_likes(self, obj):
+        return obj.likes.count()
+    
     def validate_content(self, value):
         if len(value) > MAX_TWEET_LENGTH:
             raise serializers.ValidationError("This tweet is too long")

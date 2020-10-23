@@ -94,7 +94,6 @@ def tweet_action_view(request, *args, **kwargs):
             return Response(serializer.data, status=200)
     return Response({}, status=200)
 
-
 @api_view(['GET'])
 def tweet_list_view(request, *args, **kwargs):
     qs = Tweet.objects.all()

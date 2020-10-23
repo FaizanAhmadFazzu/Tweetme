@@ -14,8 +14,8 @@ SECRET_KEY = '+s^6z#uh#k&z^jkzialwm%xrgq@-)t@b0-lo5z%)iju+d1cc*b'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1',]
-
 LOGIN_URL = "/login"
+
 MAX_TWEET_LENGTH = 240
 TWEET_ACTION_OPTIONS = ["like", "unlike", "retweet"]
 # Application definition
@@ -114,7 +114,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 
 DEFAULT_RENDERER_CLASSES = [
         'rest_framework.renderers.JSONRenderer',
