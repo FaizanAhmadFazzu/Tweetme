@@ -43,8 +43,6 @@ class TweetSerializer(serializers.ModelSerializer):
     def get_likes(self, obj):
         return obj.likes.count()
 
-    def get_likes(self, obj):
-        return obj.likes.count()
     
     def validate_content(self, value):
         if len(value) > MAX_TWEET_LENGTH:
