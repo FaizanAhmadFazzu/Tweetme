@@ -49,7 +49,6 @@ export function TweetsList(props) {
     useEffect(() => {
         if (tweetsDidSet === false){
             const myCallback = (response, status) => {
-                console.log(response)
                 if(status === 200){
                     setTweetsInit(response)
                     setTweetsDidSet(true)
